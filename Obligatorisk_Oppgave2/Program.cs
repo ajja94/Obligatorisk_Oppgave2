@@ -6,6 +6,8 @@ namespace Obligatorisk_Oppgave2
 {
   public  class Program
     {
+
+        //HEI ANJA 
         //static void enable()
         //{
         //    Console.OutputEncoding = System.Text.Encoding.UTF8;
