@@ -17,7 +17,7 @@ namespace Obligatorisk_Oppgave2_UnitTest
         
         public bool TestMovePawn( string fromPostiton, string toPosition, bool isWhite, bool attacking)
         {
-            var pawn = new Pawn("Pwn", isWhite);
+            var pawn = new Pawn( isWhite);
             return pawn.Move(fromPostiton, toPosition, attacking);
         }
 
@@ -25,7 +25,7 @@ namespace Obligatorisk_Oppgave2_UnitTest
         [TestCase("h1", "c1", true, ExpectedResult = false)]
         public bool TestMoveRook(string fromPostiton, string toPosition, bool isWhite)
         {
-            var rook = new Rook("Roo", isWhite);
+            var rook = new Rook( isWhite);
             return rook.Move(fromPostiton, toPosition, isWhite);
         }
         [Test]
@@ -33,7 +33,7 @@ namespace Obligatorisk_Oppgave2_UnitTest
         [TestCase("c1", "e3", true, ExpectedResult = false)]
         public bool TestMoveBishop(string fromPostiton, string toPosition, bool isWhite)
         {
-            var bishop = new Bishop("Bis", isWhite);
+            var bishop = new Bishop( isWhite);
             return bishop.Move(fromPostiton, toPosition, isWhite);
         }
         [Test]
@@ -43,7 +43,7 @@ namespace Obligatorisk_Oppgave2_UnitTest
         [TestCase("d1", "d4", true, ExpectedResult = true)]
         public bool TestMoveQueen(string fromPostiton, string toPosition, bool isWhite)
         {
-            var queen = new Queen("Que", isWhite);
+            var queen = new Queen( isWhite);
             return queen.Move(fromPostiton, toPosition, isWhite);
         }
         [Test]
@@ -55,7 +55,7 @@ namespace Obligatorisk_Oppgave2_UnitTest
         public bool TestMoveHorse(string fromPostiton, string toPosition, bool isWhite)
         {
            
-            var horse = new Horse("kni", isWhite);
+            var horse = new Horse( isWhite);
             return horse.Move(fromPostiton, toPosition, isWhite);
             
         }
@@ -66,8 +66,19 @@ namespace Obligatorisk_Oppgave2_UnitTest
         [TestCase("e1", "e2", true, ExpectedResult = true)]
         public bool TestKing(string fromPostiton, string toPosition, bool isWhite)
         {
-            var king = new King("Kng", isWhite);
+            var king = new King(isWhite);
             return king.Move(fromPostiton, toPosition, isWhite);
+        }
+
+        [Test]
+        [TestCase("a1", "a3", true, ExpectedResult = new string[] { "a2" })]
+        [TestCase("a7", "a2", true, ExpectedResult = new string[] { "a6", "a5", "a4", "a3" })]
+        [TestCase("a1", "h1", true, ExpectedResult = new string[] { "b1", "c1", "d1", "e1", "f1", "g1" })]
+        [TestCase("c1", "a1", true, ExpectedResult = new string[] { "b1"})]
+        public string[] RookMovedPlaces(string from, string to, bool isWhite)
+        {
+            var rook = new Rook(isWhite);
+            return rook.GetInBetweenPositions(from, to);
         }
     }
 }

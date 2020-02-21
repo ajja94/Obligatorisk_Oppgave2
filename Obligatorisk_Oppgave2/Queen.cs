@@ -6,9 +6,14 @@ namespace Obligatorisk_Oppgave2
 {
   public  class Queen : Piece
     {
-        public Queen(string symbol, bool isWhite) : base(symbol, isWhite)
+        public Queen( bool isWhite) : base("QUE", isWhite)
         {
            
+        }
+
+        public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool Move(string fromPosition, string toPosition, bool attacking)

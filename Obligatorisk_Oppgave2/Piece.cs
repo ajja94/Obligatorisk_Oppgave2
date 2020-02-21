@@ -17,6 +17,7 @@ namespace Obligatorisk_Oppgave2
             }
 
             public abstract bool Move(string fromPosition, string toPosition, bool isWhite);
-        
+        public abstract string[] GetInBetweenPositions(string fromPosition, string toPosition);
+
     }
 }

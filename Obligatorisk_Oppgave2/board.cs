@@ -38,7 +38,7 @@ namespace SimpleChess
 
         public bool Move(string fromPosition, string toPosition)
         {
-            if (!HvitEllerSvart(fromPosition)) return false;
+           // if (!HvitEllerSvart(fromPosition)) return false;
             if (!CanGoThere(toPosition, fromPosition)) return false;
             // if (HasValue(toPosition) || !HasValue(fromPosition)) return false;
 
@@ -51,46 +51,46 @@ namespace SimpleChess
 
             return true;
         }
-        public bool HvitEllerSvart(string fromPosition)
-        {
-            int hvitEllerSvart;
-            for (hvitEllerSvart = 0; hvitEllerSvart >= 0;)
-            {
+        //public bool HvitEllerSvart(string fromPosition)
+        //{
+        //    int hvitEllerSvart;
+        //    for (hvitEllerSvart = 0; hvitEllerSvart >= 0;)
+        //    {
 
-                if (hvitEllerSvart == 0 || hvitEllerSvart % 2 == 0)
-                {
-                    if (_pieces[fromPosition].IsWhite)
-                    {
-                        hvitEllerSvart++;
-                        return _pieces[fromPosition].IsWhite == _pieces[fromPosition].IsWhite;
+        //        if (hvitEllerSvart == 0 || hvitEllerSvart % 2 == 0)
+        //        {
+        //            if (_pieces[fromPosition].IsWhite)
+        //            {
+        //                hvitEllerSvart++;
+        //                return _pieces[fromPosition].IsWhite == _pieces[fromPosition].IsWhite;
                         
-                    }
-                    else
-                    {
+        //            }
+        //            else
+        //            {
                        
-                        return false;
-                    }
-                }
+        //                return false;
+        //            }
+        //        }
 
-                else
-                {
-                    if (!_pieces[fromPosition].IsWhite)
-                    {
-                        hvitEllerSvart++;
-                        return !_pieces[fromPosition].IsWhite == !_pieces[fromPosition].IsWhite;
+        //        else
+        //        {
+        //            if (!_pieces[fromPosition].IsWhite)
+        //            {
+        //                hvitEllerSvart++;
+        //                return !_pieces[fromPosition].IsWhite == !_pieces[fromPosition].IsWhite;
 
-                    }
-                    else
-                    {
+        //            }
+        //            else
+        //            {
                        
-                        return false;
-                    }
+        //                return false;
+        //            }
 
-                }
-            }
-          
-                return true;
-        }
+        //        }
+        //    }
+        //  
+        //        return true;
+       // }
 
 
 

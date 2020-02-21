@@ -6,18 +6,20 @@ namespace Obligatorisk_Oppgave2
 {
   public  class Program
     {
-        //static void enable()
+        //static void Enable()
         //{
         //    Console.OutputEncoding = System.Text.Encoding.UTF8;
         //    Console.Write("\xfeff"); // bom = byte order mark
         //}
         static void Main(string[] args)
         {
-          //  String unicodeString = "Sailboats: ⛵~\u26f5" +
+          //  Enable();
+          //  String unicodeString = "Sailboats: ⛵~\u26f5"+
           //"\n" +  // or \r
           //"\x043a\x043e\x0448\x043a\x0430 \x65e5\x672c\x56fd\U00002728⏰\u25a3\u06de\u02a5\u0414\u0416\u0489\u8966";
 
           //  Console.WriteLine(unicodeString);
+          //  Console.ReadLine();
 
 
             //--------------------------------------------//
@@ -25,19 +27,19 @@ namespace Obligatorisk_Oppgave2
 
             var board = new Board();
 
-            var bishop = new Bishop("Bis",false);
-            var rook = new Rook("Roo", false);
-            var queen = new Queen("Que",false);
-            var horse = new Horse("Kni",false);
-            var king = new King("Kng",false);
-            var pawn = new Pawn("Paw",false);
+            var bishop = new Bishop(false);
+            var rook = new Rook( false);
+            var queen = new Queen(false);
+            var horse = new Horse(false);
+            var king = new King(false);
+            var pawn = new Pawn(false);
          //-----------------------------------------------------------------
-            var bishopW = new Bishop("Bis",true);
-            var rookW = new Rook("Roo", true);
-            var queenW = new Queen("Que",true);
-            var horseW = new Horse("Kni", true);
-            var kingW = new King("Kng",true);
-            var pawnW = new Pawn("Paw",true);
+            var bishopW = new Bishop(true);
+            var rookW = new Rook(true);
+            var queenW = new Queen(true);
+            var horseW = new Horse( true);
+            var kingW = new King(true);
+            var pawnW = new Pawn(true);
           //  ---------------------Setter brikker på brettet----------------\\
 
             board.Set("c8", bishop);

@@ -6,11 +6,17 @@ namespace Obligatorisk_Oppgave2
 {
    public class Bishop : Piece
     {
-        public Bishop(string symbol, bool isWhite) : base(symbol, isWhite)
+        public Bishop( bool isWhite) : base("BIS", isWhite)
         {
             //Symbol = "BIS";
            
         }
+
+        public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool Move(string fromPosition, string toPosition, bool attacking)
         {
             var diffCol = fromPosition[0] - toPosition[0];

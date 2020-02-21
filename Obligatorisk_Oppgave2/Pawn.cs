@@ -6,9 +6,14 @@ namespace Obligatorisk_Oppgave2
 {
     public class Pawn : Piece
     {
-        public Pawn(string symbol, bool isWhite) : base(symbol, isWhite)
+        public Pawn( bool isWhite) : base("PWN", isWhite)
         {
            
+        }
+
+        public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
+        {
+            throw new NotImplementedException();
         }
 
         //--------------------

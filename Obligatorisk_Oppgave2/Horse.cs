@@ -6,9 +6,14 @@ namespace Obligatorisk_Oppgave2
 {
     public class Horse:Piece
     {
-        public Horse(string symbol, bool isWhite) : base(symbol, isWhite)
+        public Horse( bool isWhite) : base("KNI", isWhite)
         {
           //  Symbol = "KNI";
+        }
+
+        public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool Move(string fromPosition, string toPosition, bool attacking)

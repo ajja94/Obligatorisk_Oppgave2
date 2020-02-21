@@ -6,9 +6,14 @@ namespace Obligatorisk_Oppgave2
 {
    public class King : Piece
     {
-        public King(string symbol, bool isWhite) : base(symbol, isWhite)
+        public King( bool isWhite) : base("KNG", isWhite)
         {
             //Symbol = "KIN";
+        }
+
+        public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool Move(string fromPosition, string toPosition, bool isWhite)
