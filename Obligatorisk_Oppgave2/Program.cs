@@ -7,6 +7,9 @@ namespace Obligatorisk_Oppgave2
   public  class Program
     {
         //static void Enable()
+
+        //HEI ANJA 
+        //static void enable()
         //{
         //    Console.OutputEncoding = System.Text.Encoding.UTF8;
         //    Console.Write("\xfeff"); // bom = byte order mark
