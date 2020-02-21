@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obligatorisk_Oppgave2", "Obligatorisk_Oppgave2\Obligatorisk_Oppgave2.csproj", "{01BFA359-C364-4CFD-AC56-3692EC665726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obligatorisk_Oppgave2_UnitTest", "Obligatorisk_Oppgave2_UnitTest\Obligatorisk_Oppgave2_UnitTest.csproj", "{77612475-89FE-48F0-ABDB-231DEBB2FEE6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01BFA359-C364-4CFD-AC56-3692EC665726} = {01BFA359-C364-4CFD-AC56-3692EC665726}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01BFA359-C364-4CFD-AC56-3692EC665726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01BFA359-C364-4CFD-AC56-3692EC665726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01BFA359-C364-4CFD-AC56-3692EC665726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01BFA359-C364-4CFD-AC56-3692EC665726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77612475-89FE-48F0-ABDB-231DEBB2FEE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77612475-89FE-48F0-ABDB-231DEBB2FEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77612475-89FE-48F0-ABDB-231DEBB2FEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77612475-89FE-48F0-ABDB-231DEBB2FEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37CD9777-217C-4842-B4F3-62B454F015D8}
+	EndGlobalSection
+EndGlobal
