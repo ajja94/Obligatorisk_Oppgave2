@@ -34,7 +34,7 @@ namespace Obligatorisk_Oppgave2
             {
                 for (int i = 1; i < Math.Abs(diffCol); i++)
                 {
-                    if (diffCol > 0)
+                    if (diffCol < 0)
                     {
                         placesMoved.Add($"{(char)(fromPosition[0] - i)}{(char)(fromPosition[1] -i)}");
                     }

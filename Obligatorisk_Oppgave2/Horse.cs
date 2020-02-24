@@ -13,7 +13,7 @@ namespace Obligatorisk_Oppgave2
 
         public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
         {
-            throw new NotImplementedException();
+            return new string[0];
         }
 
         public override bool Move(string fromPosition, string toPosition, bool attacking)

@@ -8,10 +8,29 @@ namespace SimpleChess
     public class Board
     {
         readonly Dictionary<string, Piece> _pieces = new Dictionary<string, Piece>();
+        public bool WhiteTurn { get; set; } = true;
         // private Piece piece1;
 
         //bool IsBlack = false;
         //bool IsWhite = false;
+
+        //public void string GetInBetweenPositions()
+        //{
+
+        //}
+        //public void loopDictionary()
+        //{
+        //    foreach (var pice in board.Show() )
+        //    {
+        //        if (HasValue(pice))
+        //        {
+        //            Console.WriteLine(pice);
+        //        }
+
+        //        else Console.WriteLine("Tom");
+        //    }
+        //    Console.ReadLine();
+        //}
 
         public void Set(string position, Piece piece)
         {
@@ -38,15 +57,42 @@ namespace SimpleChess
 
         public bool Move(string fromPosition, string toPosition)
         {
-           // if (!HvitEllerSvart(fromPosition)) return false;
+            // if (!HvitEllerSvart(fromPosition)) return false;
             if (!CanGoThere(toPosition, fromPosition)) return false;
             // if (HasValue(toPosition) || !HasValue(fromPosition)) return false;
 
             var piece = _pieces[fromPosition];
             var isPossible = piece.Move(fromPosition, toPosition, _pieces.ContainsKey(toPosition));
+            if (WhiteTurn != _pieces[fromPosition].IsWhite) isPossible = false;
+            if (isPossible)
+            {
+                var positions = piece.GetInBetweenPositions(fromPosition, toPosition);
+                foreach (var pos in positions)
+                {
+                    if (_pieces.ContainsKey(pos))
+                    {
+                        isPossible = false;
+                        break;
+                    }
+                }
+                if (_pieces.ContainsKey(toPosition) && isPossible)
+                {
+                    if (_pieces[fromPosition].IsWhite == _pieces[toPosition].IsWhite)
+                    {
+                        isPossible = false;
+                    }
+                    else if (_pieces[fromPosition].IsWhite != _pieces[toPosition].IsWhite)
+                    {
+                        Remove(toPosition, _pieces[toPosition]);
+                    }
+                }
+
+            }
+
             if (!isPossible) return false;
             Set(toPosition, piece);
             Remove(fromPosition, piece);
+            WhiteTurn = !WhiteTurn;
             //Set(fromPosition,null);
 
             return true;
@@ -63,11 +109,11 @@ namespace SimpleChess
         //            {
         //                hvitEllerSvart++;
         //                return _pieces[fromPosition].IsWhite == _pieces[fromPosition].IsWhite;
-                        
+
         //            }
         //            else
         //            {
-                       
+
         //                return false;
         //            }
         //        }
@@ -82,7 +128,7 @@ namespace SimpleChess
         //            }
         //            else
         //            {
-                       
+
         //                return false;
         //            }
 
@@ -90,7 +136,7 @@ namespace SimpleChess
         //    }
         //  
         //        return true;
-       // }
+        // }
 
 
 

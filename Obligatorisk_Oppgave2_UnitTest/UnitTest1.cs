@@ -87,6 +87,7 @@ namespace Obligatorisk_Oppgave2_UnitTest
         [TestCase("c1","e3", true, ExpectedResult = new string[] { "d2" })]
         [TestCase("c1","g5", true, ExpectedResult = new string[] { "d2", "e3", "f4" })]
         [TestCase("a1","h8", true, ExpectedResult = new string[] { "b2", "c3", "d4", "e5", "f6", "g7" })]
+        [TestCase("f1","b5", true, ExpectedResult = new string[] { "e2", "d3", "c4" })]
         public string[] BishopMovedPlaces(string from, string to, bool isWhite)
         {
             var bishop = new Bishop(isWhite);
@@ -114,5 +115,8 @@ namespace Obligatorisk_Oppgave2_UnitTest
             var pawn = new Pawn(isWhite);
             return pawn.GetInBetweenPositions(from, to);
         }
+
+
+
     }
 }

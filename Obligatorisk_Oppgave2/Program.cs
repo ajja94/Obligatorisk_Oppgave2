@@ -81,13 +81,23 @@ namespace Obligatorisk_Oppgave2
             board.Set("g7", pawn);
             board.Set("h7", pawn);
 
-
+           // var IsWhiteTurn = true;
             //   Console.ResetColor();
             while (true)
             {
                 board.Show();
                 Console.WriteLine("Blankt svar avslutter programmet. Ruter skrives som en bokstav og et tall, for eksempel \"e4\".");
-                Console.WriteLine("Hvit begynner");
+                if (!board.WhiteTurn == true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                //Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{(board.WhiteTurn ? "Hvit" : "Rød")} sin tur");
+                Console.ForegroundColor = ConsoleColor.White;
                 var positionFrom = Ask("Hvilken rute vil du flytte fra?");
                 var positionTo = Ask("Hvilken rute vil du flytte til?");
                 board.Move(positionFrom, positionTo);
