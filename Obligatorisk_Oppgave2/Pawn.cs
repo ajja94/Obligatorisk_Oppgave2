@@ -6,15 +6,30 @@ namespace Obligatorisk_Oppgave2
 {
     public class Pawn : Piece
     {
-        public Pawn( bool isWhite) : base("PWN", isWhite)
+        public Pawn(bool isWhite) : base("PWN", isWhite)
         {
-           
+
         }
 
         public override string[] GetInBetweenPositions(string fromPosition, string toPosition)
         {
-            throw new NotImplementedException();
+            var diffCol = fromPosition[0] - toPosition[0];
+            var diffRow = fromPosition[1] - toPosition[1];
+            var placesMoved = new List<string>();
+            if (Math.Abs( diffRow )== 2)
+            {
+                if (IsWhite)
+                {
+                    placesMoved.Add($"{(char)(fromPosition[0])}{(char)(fromPosition[1] + 1)}");
+                }
+                else
+                {
+                    placesMoved.Add($"{(char)(fromPosition[0])}{(char)(fromPosition[1] - 1)}");
+                }
+            }
+            return placesMoved.ToArray();
         }
+
 
         //--------------------
         //| from 0 |         |
@@ -31,32 +46,36 @@ namespace Obligatorisk_Oppgave2
         {
             var diffCol = fromPosition[0] - toPosition[0];
             var diffRow = fromPosition[1] - toPosition[1];
-            if(IsWhite) {
+            if (IsWhite)
+            {
                 if ((diffRow == -2) && fromPosition.Contains("2"))
                 {
                     return fromPosition[0] == toPosition[0];
                 }
-                else if(diffRow == -1 || diffCol == -1)
+                else if (diffRow == -1 || diffCol == -1)
                 {
-                   // trenger en quick fix
-                    if (attacking) { 
+                    // trenger en quick fix
+                    if (attacking)
+                    {
                         return Math.Abs(diffRow) == Math.Abs(diffCol);
                     }
-                    else if (toPosition != ""){
-                      return fromPosition[0] == toPosition[0];
+                    else if (toPosition != "")
+                    {
+                        return fromPosition[0] == toPosition[0];
                     }
                 }
             }
-         //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
-            else { 
-            if ((diffRow == +2) && fromPosition.Contains("7"))
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+            else
             {
-                // denne bestemmer  at bonnen kan gå skrått ||  Denne bestemmer at bonnen kan gå fremover (opp eller ned på brettet utifra farge) 
-                return  fromPosition[0] == toPosition[0];
-            }
-                else if(diffRow == +1 || diffCol == +1)
+                if ((diffRow == +2) && fromPosition.Contains("7"))
                 {
-                     // denne bestemmer  at bonnen kan gå skrått ||  Denne bestemmer at bonnen kan gå fremover (opp eller ned på brettet utifra farge)
+                    // denne bestemmer  at bonnen kan gå skrått ||  Denne bestemmer at bonnen kan gå fremover (opp eller ned på brettet utifra farge) 
+                    return fromPosition[0] == toPosition[0];
+                }
+                else if (diffRow == +1 || diffCol == +1)
+                {
+                    // denne bestemmer  at bonnen kan gå skrått ||  Denne bestemmer at bonnen kan gå fremover (opp eller ned på brettet utifra farge)
                     //return Math.Abs(diffRow) == Math.Abs(diffCol) || fromPosition[0] == toPosition[0];
                     if (attacking)
                     {
@@ -66,7 +85,7 @@ namespace Obligatorisk_Oppgave2
                     {
                         return fromPosition[0] == toPosition[0];
                     }
-                   
+
                 }
             }
             return false;
